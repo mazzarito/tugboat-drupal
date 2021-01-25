@@ -1,15 +1,15 @@
 # Run "make help" to see a description of the targets in this Makefile.
 
 # The destination image to push to.
-export DESTINATION_DOCKER_IMAGE ?= q0rban/tugboat-drupal
+export DESTINATION_DOCKER_IMAGE ?= blankstyle/tugboat-drupal
 # The version of PHP.
-export PHP_VERSION ?= 7.3
+export PHP_VERSION ?= 7.2
 
 ## You probably don't need to modify any of the following.
 # Look up the versions of Drupal to create tags for by querying the Composer
 # drupal/recommended-project package, which can be found at
 # https://github.com/drupal/recommended-project
-export DRUPAL_VERSIONS := $(shell curl --silent https://api.github.com/repos/drupal/recommended-project/tags | jq -r '.[].name' | sort -V)
+export DRUPAL_VERSIONS := 6.52
 # Today's date.
 export DATE := $(shell date "+%Y-%m-%d")
 # The directory to keep track of build steps.
